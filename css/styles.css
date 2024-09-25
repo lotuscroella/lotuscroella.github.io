@@ -1,0 +1,140 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.telegram-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.telegram-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.telegram-icon img:hover {
+    opacity: 0.8;
+}
+
+/* Pink Theme */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    color: #f5a4d3;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+}
+
+.hero-content p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f5a4d3;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #e69ab8;
+}
+
+.features-section, .download-section, .contact-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.features-section h2, .download-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f5a4d3;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    margin: 20px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    width: 220px;
+    opacity: 0;  /* Initially hidden */
+    transform: translateY(30px);  /* Slide from below */
+    transition: opacity 1s ease, transform 1.3s ease;  /* Set the duration to 0.9s */
+    transition-delay: 0s;  /* To be modified dynamically */
+}
+
+.feature-item.show {
+    opacity: 1;
+    transform: translateY(0);  /* Slide up into view */
+}
+
+.download-section p {
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    background-color: #ff6f9c;
+}
+
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    color: #ccc;
+}
