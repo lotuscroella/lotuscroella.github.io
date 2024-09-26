@@ -3,26 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project Lotus - GTA V Mod Menu</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .telegram-btn {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            background-color: #DC143C;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .telegram-btn:hover {
+            background-color: #b3122d;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: #fff;
+        }
+
+        .hero-content .welcome {
+            color: #fff;
+            display: inline-block;
+            animation: slideIn 1.2s ease-out, fadeIn 0.85s ease-in;
+        }
+
+        .hero-content .project-lotus {
+            color: #DC143C;
+            font-size: 4rem;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .welcome-info {
+            opacity: 0;
+            color: #DC143C;
+            animation: fadeInInfo 0.85s ease-in 1.3s forwards;
+        }
+
+        @keyframes fadeInInfo {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #DC143C;
+            color: #fff;
+            border: none;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #b3122d;
+        }
+
+        .features-section, .download-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .features-section h2, .download-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #DC143C;
+        }
+
+        .feature-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            margin: 20px;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            width: 220px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .feature-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-instruction {
+            opacity: 0.35;
+            color: #ccc;
+        }
+
+        .color-white {
+            color: #fff;
+        }
+        .color-red {
+            color: #DC143C;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#download">Download</a></li>
-                <li><a href="https://t.me/projectlotus" target="_blank" title="Contact us on Telegram">Contact</a></li>
+                <li><a href="https://t.me/projectlotus">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1>Welcome to Project Lotus</h1>
-            <p>The Ultimate GTA V Mod Menu with Endless Possibilities</p>
+            <h1><span class="welcome">Welcome</span> to <span class="project-lotus">Project Lotus</span></h1>
+            <p><span class="welcome-info">GTA V and Red Dead Redemption 2 Online Cheats</span></p>
             <a href="#download" class="btn">Download Now</a>
         </div>
     </section>
@@ -50,15 +234,49 @@
     </section>
 
     <section id="download" class="download-section">
-        <h2>Download Project Lotus</h2>
-        <p>Click the button below to download the launcher.</p>
+        <h2><span class="color-white">Download</span> Project Lotus</h2>
+        <p class="download-instruction">Click the button below to download the launcher.</p>
         <a href="your-direct-download-link-here" class="btn download-btn" download>Download Launcher</a>
     </section>
 
     <footer>
-        <p>Project Lotus. All rights reserved.</p>
+        <p>&copy; 2024 Project Lotus. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        function revealFeatures() {
+            const features = document.querySelectorAll('.feature-item');
+            const windowHeight = window.innerHeight;
+
+            features.forEach((feature, index) => {
+                const revealTop = feature.getBoundingClientRect().top;
+
+                if (revealTop < windowHeight - 100) {
+                    setTimeout(() => {
+                        feature.classList.add('show');
+                    }, index * 200);
+                }
+            });
+        }
+
+        const smoothScroll = (target) => {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        };
+
+        document.querySelectorAll('nav a, .btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = button.getAttribute('href');
+                smoothScroll(target);
+            });
+        });
+
+        window.addEventListener('scroll', revealFeatures);
+
+        window.addEventListener('load', revealFeatures);
+    </script>
 </body>
 </html>
