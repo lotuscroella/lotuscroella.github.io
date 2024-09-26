@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Lotus - GTA V Mod Menu</title>
+    <title>Phantom Framework</title>
     <style>
         * {
             margin: 0;
@@ -65,7 +65,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #222;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('gtavrdr2.jpg') no-repeat center center/cover;
+            opacity: 0.05;
+            filter: blur(10px);
+            z-index: 1;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
         }
 
         .hero-content h1 {
@@ -194,10 +224,10 @@
 
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1><span class="welcome">Welcome</span> to <span class="project-lotus">Project Lotus</span></h1>
-            <p><span class="welcome-info">GTA V and Red Dead Redemption 2 Online Cheats</span></p>
+            <h1><span class="welcome">Welcome</span> to <span class="project-lotus">Phantom Framework</span></h1>
+            <p><span class="welcome-info">GTA V and Red Dead Redemption 2 Cheats</span></p>
             <a href="#download" class="btn">Download Now</a>
-            <a href="https://t.me/projectlotus" class="btn" target="_blank" rel="noopener noreferrer">Contact</a>
+            <a href="https://t.me/phantomframework" class="btn" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
     </section>
 
@@ -205,8 +235,8 @@
         <h2>Features</h2>
         <div class="feature-list">
             <div class="feature-item hidden">
-                <h3>Unlimited Money</h3>
-                <p>Gain access to unlimited in-game cash with a single click.</p>
+                <h3>Recovery</h3>
+                <p>Gain access to recovery tools and options.</p>
             </div>
             <div class="feature-item hidden">
                 <h3>God Mode</h3>
@@ -224,13 +254,13 @@
     </section>
 
     <section id="download" class="download-section">
-        <h2><span class="color-white">Download</span> Project Lotus</h2>
+        <h2><span class="color-white">Download</span> Phantom Framework</h2>
         <p class="download-instruction">Click the button below to download the launcher.</p>
         <a href="your-direct-download-link-here" class="btn download-btn" download>Download Launcher</a>
     </section>
 
     <footer>
-        <p>&copy; 2024 Project Lotus. All rights reserved.</p>
+        <p>&copy; 2024 Phantom Framework. All rights reserved.</p>
     </footer>
 
     <script>
